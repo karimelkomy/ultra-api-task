@@ -1,0 +1,59 @@
+{
+	"info": {
+		"_postman_id": "ce2e9676-05a4-4d6a-9c4c-6e418708cc49",
+		"name": "Ultra",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3358709"
+	},
+	"item": [
+		{
+			"name": "/employee",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var response = pm.response.json();",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response status include 'success'\", function () {",
+							"    pm.expect(response.status).to.include(\"success\");",
+							"});",
+							"",
+							"pm.test(\"Response data id is integer\", function () {",
+							"    for(const employee of response.data) {",
+							"        pm.expect(typeof(employee.id)).to.equal(number)",
+							"    }",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://dummy.restapiexample.com/api/v1/employees",
+					"protocol": "https",
+					"host": [
+						"dummy",
+						"restapiexample",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"employees"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
