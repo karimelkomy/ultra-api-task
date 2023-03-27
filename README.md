@@ -1,10 +1,9 @@
-# ultra-api-task
+# Readme
 
-Run can be done using postman command line
+# Setup
 
-```
-postman login --with-api-key {POSTMAN_KEY}
-postman collection run 3358709-ce2e9676-05a4-4d6a-9c4c-6e418708cc49
-```
+- Run `curl -o- "https://dl-cli.pstmn.io/install/linux64.sh" | sh` to install postman CLI
 
-or using github actions
+# Run
+
+- Run `postman collection run Ultra.postman_collection.json` 
