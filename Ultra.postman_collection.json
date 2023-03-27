@@ -23,12 +23,29 @@
 							"    pm.expect(response.status).to.include(\"success\");",
 							"});",
 							"",
-							"pm.test(\"Response data id is integer\", function () {",
+							"pm.test(\"Employees id is number\", function () {",
 							"    for(const employee of response.data) {",
-							"        pm.expect(typeof(employee.id)).to.equal(number)",
+							"        pm.expect(typeof(employee.id)).to.equal('number')",
 							"    }",
 							"});",
 							"",
+							"pm.test(\"Employees name is string\", function () {",
+							"    for(const employee of response.data) {",
+							"        pm.expect(typeof(employee.employee_name)).to.equal('string')",
+							"    }",
+							"});",
+							"",
+							"pm.test(\"Employees salary is number\", function () {",
+							"    for(const employee of response.data) {",
+							"        pm.expect(typeof(employee.employee_salary)).to.equal('number')",
+							"    }",
+							"});",
+							"",
+							"pm.test(\"Employees age is number\", function () {",
+							"    for(const employee of response.data) {",
+							"        pm.expect(typeof(employee.employee_age)).to.equal('number')",
+							"    }",
+							"});",
 							""
 						],
 						"type": "text/javascript"
@@ -57,4 +74,3 @@
 		}
 	]
 }
-
